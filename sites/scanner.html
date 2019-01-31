@@ -2,17 +2,18 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>LSE Event Scanner</title>
+  <title>📷 LSE Events Scanner</title>
   <script src="jsQR.js"></script>
   <link href="style.css" rel="stylesheet" />
 </head>
 
 <body>
   <div class="container">
+    <img id="logo" src="LSELogo.svg" alt="Logo">
     <div class="scanner">
       <div id="loadingMessage">
-        🎥 Unable to access video stream (please make sure you have a webcam
-        enabled / allow)
+        🎥 Unable to access video stream (please make sure you have a camera
+        enabled / allowed)
       </div>
       <canvas id="canvas" hidden></canvas>
     </div>
@@ -27,6 +28,7 @@
     </div>
   </div>
   <script src="QRwrapper.js"></script>
+  <script src="serverCommunication.js"></script>
 </body>
 
 </html>

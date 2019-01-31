@@ -9,6 +9,14 @@
 	position: relative;
 }
 
+.header {
+	font-size: 1.1em;
+}
+
+#logo {
+	width: 200px;
+}
+
 #loadingMessage {
 	text-align: center;
 	padding: 40px;

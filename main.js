@@ -1,13 +1,18 @@
 const express = require('express');
 const path = require('path');
-var Datastore = require('nedb'),
-	devices = new Datastore({
-		filename: path.join(__dirname + '/databases/devices'),
-		autoload: true
-	});
+const Datastore = require('nedb')
+let pairedDevices = new Datastore();
 let port = process.env.PORT || 8080;
 
 const app = express();
+
+function assignToken() {
+	return getRandomString();
+}
+
+function getRandomString() {
+	return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+}
 
 
 app.listen(port, function () {
@@ -17,8 +22,18 @@ app.listen(port, function () {
 app.use(express.static('statics'))
 
 app.get('/', function (req, res) {
-	res.sendFile(path.join(__dirname + '/sites/index.html'));
-	console.log(devices);
+	res.sendFile(path.join(__dirname + '/sites/pair.html'));
+
+});
+
+app.get('/pair', function (req, res) {
+	let token = assignToken();
+	res.redirect('/paired?' + token);
+
+});
+app.get('/paired', function (req, res) {
+	res.sendFile(path.join(__dirname + '/sites/scanner.html'));
+
 });
 
 
