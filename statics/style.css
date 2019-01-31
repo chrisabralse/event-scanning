@@ -13,6 +13,10 @@
 	font-size: 1.1em;
 }
 
+canvas {
+	width: 100%;
+}
+
 #logo {
 	width: 200px;
 }
