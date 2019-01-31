@@ -9,7 +9,7 @@ function drawLine(begin, end, color) {
 	canvas.beginPath();
 	canvas.moveTo(begin.x, begin.y);
 	canvas.lineTo(end.x, end.y);
-	canvas.lineWidth = 4;
+	canvas.lineWidth = 7;
 	canvas.strokeStyle = color;
 	canvas.stroke();
 }
