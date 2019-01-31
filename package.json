@@ -1,0 +1,14 @@
+{
+  "name": "lse-events-scanner-test",
+  "version": "1.0.0",
+  "description": "LSE App for scanning QR codes and checking against event registrations",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
