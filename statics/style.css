@@ -39,19 +39,29 @@ canvas {
 
 #toast {
 	position: absolute;
-	top: 0px;
+	top: 15px;
 	left: 20px;
 	right: 20px;
 	margin: auto;
 	padding: 10px;
-	color: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	border-radius: 3px;
 
 }
 
 #toast.success {
-	background: green;
+	color: #155724;
+	background: #d4edda;
+	border: 1px solid #c3e6cb;
 }
+
+#toast.error {
+	color: #721c24;
+	background: #f8d7da;
+	border: 1px solid #f5c6cb;
+}
+
 
 #toast.pop {
 	animation-name: popUp;
@@ -65,9 +75,6 @@ canvas {
 }
 
 
-#toast.error {
-	background: red;
-}
 
 @keyframes popUp {
 	from {
