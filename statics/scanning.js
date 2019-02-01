@@ -13,7 +13,7 @@ function showToast(type, message) {
 			toast.classList.remove('fade');
 		}, 200)
 
-	}, 100000);
+	}, 1000);
 }
 
 
