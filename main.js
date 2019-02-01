@@ -19,7 +19,8 @@ app.listen(port, function () {
 	console.log('server up on port: ' + port);
 });
 
-app.use(express.static('statics'))
+app.use(express.static('statics'));
+app.use(express.json());
 
 app.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname + '/sites/pair.html'));
@@ -35,6 +36,12 @@ app.get('/pair', function (req, res) {
 app.get('/paired', function (req, res) {
 	res.sendFile(path.join(__dirname + '/sites/scanner.html'));
 
+});
+
+
+app.post('/scan', function (req, res) {
+	console.log(req.body.scanData);
+	res.send('success');
 });
 
 
