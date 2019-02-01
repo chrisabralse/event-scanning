@@ -1,6 +1,6 @@
 function showToast(type, message) {
 	let toast = document.createElement('div');
-	document.getElementById('result').after(
+	document.getElementById('result').append(
 		toast
 	);
 	toast.innerHTML = message;

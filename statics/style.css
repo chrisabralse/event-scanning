@@ -37,12 +37,16 @@ canvas {
 	background-color: #eee;
 }
 
-.toast {
+#result {
 	position: absolute;
 	top: 15px;
 	left: 20px;
 	right: 20px;
-	margin: auto;
+
+}
+
+.toast {
+	margin-top: 8px;
 	padding: 10px;
 	padding-top: 20px;
 	padding-bottom: 20px;
