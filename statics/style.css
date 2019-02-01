@@ -37,7 +37,7 @@ canvas {
 	background-color: #eee;
 }
 
-#toast {
+.toast {
 	position: absolute;
 	top: 15px;
 	left: 20px;
@@ -50,28 +50,27 @@ canvas {
 
 }
 
-#toast.success {
+.toast.success {
 	color: #155724;
 	background: #d4edda;
 	border: 1px solid #c3e6cb;
 }
 
-#toast.error {
+.toast.error {
 	color: #721c24;
 	background: #f8d7da;
 	border: 1px solid #f5c6cb;
 }
 
 
-#toast.pop {
+.toast.pop {
 	animation-name: popUp;
 	animation-duration: 0.3s;
 }
 
-#toast.fade {
+.toast.fade {
 	animation-name: fade;
 	animation-duration: 0.2s;
-	animation-direction: forward;
 }
 
 

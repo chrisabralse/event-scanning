@@ -1,7 +1,10 @@
 function showToast(type, message) {
-	let toast = document.getElementById('toast');
-	toast.hidden = false;
+	let toast = document.createElement('div');
+	document.getElementById('result').after(
+		toast
+	);
 	toast.innerHTML = message;
+	toast.classList.add('toast');
 	toast.classList.add(type);
 	toast.classList.add('pop');
 	setTimeout(function () {
@@ -9,8 +12,8 @@ function showToast(type, message) {
 		toast.classList.remove('pop');
 		toast.classList.add('fade');
 		setTimeout(function () {
-			toast.hidden = true;
 			toast.classList.remove('fade');
+			toast.remove();
 		}, 200)
 
 	}, 1000);
