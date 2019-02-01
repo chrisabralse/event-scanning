@@ -97,6 +97,12 @@ function checkRegistration(res, result) {
 				status: 'success',
 				result: result
 			});
+		} else if (result.checkedIn) {
+			res.send({
+				status: 'already checked in',
+				result: result
+			});
+
 		}
 	}
 }

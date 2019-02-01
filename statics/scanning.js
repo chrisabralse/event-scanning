@@ -33,14 +33,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 	}
 
 
-	function playErrorSound(count) {
+	function playErrorSound() {
 		var audio = new Audio(errorSound);
 		audio.play();
-		audio.onended = function () {
-			if (count < 1) {
-				playErrorSound(count + 1);
-			}
-		}
 
 	}
 
@@ -48,14 +43,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		console.log('show registration status');
 		switch (response.status) {
 			case 'not found':
-				playErrorSound(0);
+				playErrorSound();
 				break;
 			case 'already checked in':
-				playErrorSound(0);
+				playErrorSound();
 				break;
 			case 'success':
 				console.log(response.result);
-				playSuccessSound(0);
+				playSuccessSound();
 				break;
 		}
 	}
