@@ -72,22 +72,22 @@ function startQR_Reader(canvasId, loadingMessageId, eventListenerElementId) {
 				drawLine(
 					code.location.topLeftCorner,
 					code.location.topRightCorner,
-					"#006400"
+					"#2669d6"
 				);
 				drawLine(
 					code.location.topRightCorner,
 					code.location.bottomRightCorner,
-					"#006400"
+					"#2669d6"
 				);
 				drawLine(
 					code.location.bottomRightCorner,
 					code.location.bottomLeftCorner,
-					"#006400"
+					"#2669d6"
 				);
 				drawLine(
 					code.location.bottomLeftCorner,
 					code.location.topLeftCorner,
-					"#006400"
+					"#2669d6"
 				);
 				video.dispatchEvent(
 					new CustomEvent("qrScanEvent", {
