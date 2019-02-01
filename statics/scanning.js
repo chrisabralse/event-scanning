@@ -1,3 +1,22 @@
+function showToast(type, message) {
+	let toast = document.getElementById('toast');
+	toast.hidden = false;
+	toast.innerHTML = message;
+	toast.classList.add(type);
+	toast.classList.add('pop');
+	setTimeout(function () {
+		toast.classList.remove(type);
+		toast.classList.remove('pop');
+		toast.classList.add('fade');
+		setTimeout(function () {
+			toast.hidden = true;
+			toast.classList.remove('fade');
+		}, 200)
+
+	}, 100000);
+}
+
+
 document.addEventListener("DOMContentLoaded", function (event) {
 
 	let currentURL = new URL(window.location.href);
@@ -9,8 +28,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		attemptCode(scanData);
 	});
 
-	startQR_Reader('canvas', 'loadingMessage', 'canvas')
-
+	startQR_Reader('canvas', 'loadingMessage', 'canvas');
 
 	function attemptCode(scanData) {
 		var xhttp = new XMLHttpRequest();
@@ -44,13 +62,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		switch (response.status) {
 			case 'not found':
 				playErrorSound();
+				showToast('error', 'Not found')
 				break;
 			case 'already checked in':
+				showToast('error', 'Already checked in')
+
 				playErrorSound();
 				break;
 			case 'success':
 				console.log(response.result);
 				playSuccessSound();
+				showToast('success', 'Checked in!')
+
 				break;
 		}
 	}
