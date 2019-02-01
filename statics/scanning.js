@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function () {
 			if (this.readyState == 4 && this.status == 200) {
-				playSound('success', this.response);
+				showRegistrationStatus(JSON.parse(this.response));
 			}
 		};
 		xhttp.open("POST", "/scan", true);
@@ -27,18 +27,36 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		}));
 	}
 
-	function playSound(type, response) {
+	function playSuccessSound() {
 		var audio = new Audio(successSound);
 		audio.play();
+	}
+
+
+	function playErrorSound(count) {
+		var audio = new Audio(errorSound);
+		audio.play();
 		audio.onended = function () {
-			showRegistration(response);
+			if (count < 1) {
+				playErrorSound(count + 1);
+			}
 		}
 
 	}
 
-	function showRegistration(response) {
-		console.log(response)
-		console.log('show registration');
+	function showRegistrationStatus(response) {
+		console.log('show registration status');
+		switch (response.status) {
+			case 'not found':
+				playErrorSound(0);
+				break;
+			case 'already checked in':
+				playErrorSound(0);
+				break;
+			case 'success':
+				console.log(response.result);
+				playSuccessSound(0);
+				break;
+		}
 	}
-
 });
