@@ -1,8 +1,16 @@
 let video;
 
-function stopQR_Reader() {
+function stopQR_Reader(canvasId, loadingMessageId) {
 	let track = video.srcObject.getTracks()[0];
 	track.stop();
+	let canvas = document.getElementById('canvasId');
+	canvas.getContext('2d');
+	context.clearRect(0, 0, canvas.width, canvas.height);
+	let loadingMessage = document.getElementById(loadingMessageId);
+	loadingMessage.innerText = "🛑 Stream stopped...";
+	loadingMessage.hidden = false;
+
+
 }
 
 function startQR_Reader(canvasId, loadingMessageId, eventListenerElementId) {

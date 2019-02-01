@@ -27,6 +27,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/pair', function (req, res) {
+	console.log(req.query);
 	let token = assignToken();
 	res.redirect('/paired?' + token);
 
