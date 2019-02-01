@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function (event) {
 
+
 	document.getElementById('canvas').addEventListener("qrScanEvent", function (e) {
 		let scanData = e.detail;
 		var audio = new Audio(successSound);

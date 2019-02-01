@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", function (event) {
 
+	let currentURL = new URL(window.location.href);
+	let token = currentURL.searchParams.get('token');
+
+
 	document.getElementById('canvas').addEventListener("qrScanEvent", function (e) {
 		let scanData = e.detail;
 		attemptCode(scanData);
@@ -18,7 +22,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		xhttp.open("POST", "/scan", true);
 		xhttp.setRequestHeader("Content-type", "application/json");
 		xhttp.send(JSON.stringify({
-			scanData: scanData
+			scanData: scanData,
+			token: token
 		}));
 	}
 

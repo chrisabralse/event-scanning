@@ -30,7 +30,7 @@ app.get('/', function (req, res) {
 app.get('/pair', function (req, res) {
 	console.log(req.query);
 	let token = assignToken();
-	res.redirect('/paired?' + token);
+	res.redirect('/paired?token=' + token);
 
 });
 app.get('/paired', function (req, res) {
@@ -40,7 +40,9 @@ app.get('/paired', function (req, res) {
 
 
 app.post('/scan', function (req, res) {
-	console.log(req.body.scanData);
+
+	let token = req.body.token;
+	let scanData = req.body.scanData;
 	res.send('success');
 });
 
