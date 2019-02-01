@@ -18,6 +18,10 @@
 	margin-left: 0px;
 }
 
+.icon {
+	float: right;
+}
+
 
 canvas {
 	width: 100%;
